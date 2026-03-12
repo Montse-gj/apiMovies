@@ -3,7 +3,11 @@ const API_URL = "http://www.omdbapi.com/";
 
 async function getData(parametro){
     try{
+<<<<<<< HEAD
         const url = `${API_URL}?${API_KEY}&s=${parametro}`;
+=======
+        const url = `${API_URL}?${API_KEY}&t=${parametro}`;
+>>>>>>> 8ff8f1a9669c638dfbda6fcd9641b2a527afb1cd
         const response = await fetch(url)
 
         if (!response.ok) {
@@ -26,6 +30,7 @@ async function getData(parametro){
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // const titles=["a", "b", "c"]
 
 // async function espera(titles){
@@ -37,6 +42,8 @@ async function getData(parametro){
 //     return movies
 // }
 =======
+=======
+>>>>>>> 8ff8f1a9669c638dfbda6fcd9641b2a527afb1cd
 const titles=["a", "b", "c"]
 
 async function espera(titles){
@@ -47,6 +54,7 @@ async function espera(titles){
     }
     return movies
 }
+<<<<<<< HEAD
 >>>>>>> feature/DOM
 
 
@@ -108,3 +116,14 @@ async function espera(titles){
 
 
 elementosApi();
+=======
+
+// let resultado = espera(titles).then(async (result) => await result)
+
+async function conseguirDatos(){
+    const results = await espera(titles)
+    console.log(results)
+
+} 
+conseguirDatos();
+>>>>>>> 8ff8f1a9669c638dfbda6fcd9641b2a527afb1cd
