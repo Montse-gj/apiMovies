@@ -1,30 +1,41 @@
 const API_KEY = "apikey=36942232";
 const API_URL = "http://www.omdbapi.com/";
 
-async function getData(parametro){
-    try{
+async function getData(parametro) {
+    try {
 
         const url = `${API_URL}?${API_KEY}&s=${parametro}`;
         const response = await fetch(url)
 
         if (!response.ok) {
-            console.log("ha habido un error", response.status);
-            return [];
-        
+            // console.log("ha habido un error", response.status);
+            // return [];
+            throw new ErrorRespuesta(response.status)
         }
-        
+
         const data = await response.json()
         const arraySearch = data.Search;
         console.log(arraySearch)
         return arraySearch
 
 
-}
-    catch (error){
-        console.error(error);
+    }
+    catch (error) {
+        throw new ErrorFetch()
+    }
 
 }
 
+class ErrorFetch extends Error {
+    constructor() {
+        super("Error de fetch")
+    }
+}
+
+class ErrorRespuesta extends Error {
+    constructor(mensaje) {
+        super(`Respuesta incorrecta: ${mensaje}`)
+    }
 }
 
 // const titles=["a", "b", "c"]
@@ -38,11 +49,11 @@ async function getData(parametro){
 //     return movies
 // }
 
-const titles=["a", "b", "c"]
+const titles = ["a", "b", "c"]
 
-async function espera(titles){
+async function espera(titles) {
     const movies = []
-    for (let title of titles){
+    for (let title of titles) {
         let element = await getData(title)
         movies.push(element)
     }
@@ -66,11 +77,11 @@ async function espera(titles){
 
 
 
-   async function elementosApi(){
-   let batman = await getData("bat");
-   const section = document.getElementById("movies-section");
+async function elementosApi() {
+    let batman = await getData("bat");
+    const section = document.getElementById("movies-section");
 
-   for (let i of batman){
+    for (let i of batman) {
         const article = document.createEleme2025nt("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
         <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
@@ -83,13 +94,13 @@ async function espera(titles){
             </div>
         </div>
     </div>`
-    section.appendChild(article)
-   }
-   
-//    const title = arrayBatman[0].Title;
-//    const poster = arrayBatman[0].Poster;
-//    console.log(title, poster)
-   
+        section.appendChild(article)
+    }
+
+    //    const title = arrayBatman[0].Title;
+    //    const poster = arrayBatman[0].Poster;
+    //    console.log(title, poster)
+
 }
 // let resultado = espera(titles).then(async (result) => await result)
 
@@ -108,17 +119,17 @@ elementosApi();
 
 // let resultado = espera(titles).then(async (result) => await result)
 
-async function conseguirDatos(){
+async function conseguirDatos() {
     const results = await espera(titles)
     console.log(results)
 
-} 
+}
 conseguirDatos();
 
 
-function listadoHTML(busqueda){
+function listadoHTML(busqueda) {
 
-    for (let i of busqueda){
+    for (let i of busqueda) {
         const article = document.createElement("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
         <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
@@ -130,16 +141,16 @@ function listadoHTML(busqueda){
             </div>
         </div>
     </div>`
-    
-    section.appendChild(article)
-}
+
+        section.appendChild(article)
+    }
 }
 
 
 const input = document.getElementById("search-input");
 const button = document.getElementById("search-button");
 
-button.addEventListener("click",async (event) => {
+button.addEventListener("click", async (event) => {
     event.preventDefault()
     let textoBusqueda = input.value
     let busqueda = await getData(textoBusqueda)
@@ -147,4 +158,7 @@ button.addEventListener("click",async (event) => {
     listadoHTML(busqueda)
 })
 const section = document.getElementById("movies-section");
+
+
+
 
