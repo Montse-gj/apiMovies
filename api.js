@@ -25,16 +25,16 @@ async function getData(parametro){
 
 
 
-const titles=["a", "b", "c"]
+// const titles=["a", "b", "c"]
 
-async function espera(titles){
-    const movies = []
-    for (let title of titles){
-        let element = await getData(title)
-        movies.push(element)
-    }
-    return movies
-}
+// async function espera(titles){
+//     const movies = []
+//     for (let title of titles){
+//         let element = await getData(title)
+//         movies.push(element)
+//     }
+//     return movies
+// }
 
 
 
@@ -57,6 +57,7 @@ async function espera(titles){
    let batman = await getData("batman");
    const arrayBatman = batman.Search;
    const section = document.getElementById("movies-section");
+   
    for (let i of arrayBatman){
         const article = document.createElement("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
