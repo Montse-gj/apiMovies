@@ -14,7 +14,10 @@ async function getData(parametro){
         }
         
         const data = await response.json()
-        return data
+        const arraySearch = data.Search;
+        console.log(arraySearch)
+        return arraySearch
+
 
 }
     catch (error){
@@ -64,12 +67,11 @@ async function espera(titles){
 
 
    async function elementosApi(){
-   let batman = await getData("batman");
-   const arrayBatman = batman.Search;
+   let batman = await getData("bat");
    const section = document.getElementById("movies-section");
 
-   for (let i of arrayBatman){
-        const article = document.createElement("article")
+   for (let i of batman){
+        const article = document.createEleme2025nt("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
         <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
         
@@ -112,3 +114,37 @@ async function conseguirDatos(){
 
 } 
 conseguirDatos();
+
+
+function listadoHTML(busqueda){
+
+    for (let i of busqueda){
+        const article = document.createElement("article")
+        article.innerHTML = `<div class="movie-card" data-name="NA">
+        <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
+        <div class="movie-info">
+        <h3>${i.Title}</h3>
+            <div class="contenedor-botones">
+                <a href="#" class="btn-ver">Ver</a>
+                <a href="lorax.html" class="btn-desc">Descripción</a>
+            </div>
+        </div>
+    </div>`
+    
+    section.appendChild(article)
+}
+}
+
+
+const input = document.getElementById("search-input");
+const button = document.getElementById("search-button");
+
+button.addEventListener("click",async (event) => {
+    event.preventDefault()
+    let textoBusqueda = input.value
+    let busqueda = await getData(textoBusqueda)
+    section.innerHTML = ""
+    listadoHTML(busqueda)
+})
+const section = document.getElementById("movies-section");
+
