@@ -18,7 +18,7 @@ async function getData(parametro) {
         console.log(arraySearch)
         return arraySearch
 
-
+arraySearch
     }
     catch (error) {
         throw new ErrorFetch()
@@ -78,11 +78,11 @@ async function espera(titles) {
 
 
 async function elementosApi() {
-    let batman = await getData("bat");
+    let batman = await getData("batman");
     const section = document.getElementById("movies-section");
 
     for (let i of batman) {
-        const article = document.createEleme2025nt("article")
+        const article = document.createElement("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
         <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
         
@@ -130,9 +130,12 @@ conseguirDatos();
 function listadoHTML(busqueda) {
 
     for (let i of busqueda) {
+        if (i.Poster === "N/A"){
+            i.Poster = "https://placehold.co/600x400?text=Portada+no+encontrada"
+        }
         const article = document.createElement("article")
         article.innerHTML = `<div class="movie-card" data-name="NA">
-        <img src="${i.Poster}" alt="Portada pelicula ${i.Title}>
+        <img src="${i.Poster}" alt="Portada pelicula ${i.Title}">
         <div class="movie-info">
         <h3>${i.Title}</h3>
             <div class="contenedor-botones">
