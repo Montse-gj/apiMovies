@@ -1,7 +1,8 @@
 import { getData } from "./api.js";
+import { pintarArticles } from "./DOM.js";
 
 
-let batman = await getData("batman");
+let busqueda = await getData("batman");
 
 pintarArticles(batman);
 
