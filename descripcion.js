@@ -35,6 +35,10 @@ function pintarDescripcion(pelicula) {
     const wrapper = document.createElement('div');
     wrapper.classList.add('description__wrapper');
 
+    if (!poster || poster === "N/A") {
+        poster = "https://placehold.co/375x300?text=Portada+no+encontrada";
+    };
+    
     const img = document.createElement('img');
     img.classList.add('description__img');
     img.src = poster;
