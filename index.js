@@ -22,5 +22,3 @@ button.addEventListener("click", async (event) => {
     pintarArticles(busqueda)
 
 })
-
-

@@ -8,13 +8,11 @@ export function selectionFavorites(getBusqueda, section) {
         const articles = Array.from(section.querySelectorAll("article"));
         const arrayPositions = articles.indexOf(article);
         const peliculaSelec = getBusqueda()[arrayPositions];
-
         const yaExiste = favoritos.some(peli => peli.imdbID === peliculaSelec.imdbID);
         if (yaExiste) {
             console.log("Ya está en favoritos");
             return;
         }
-
         favoritos.push(peliculaSelec);
         localStorage.setItem("favoritos", JSON.stringify(favoritos));
         console.log(favoritos);
