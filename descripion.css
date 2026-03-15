@@ -30,7 +30,7 @@
     margin: 0;
 }
 
-.description__price {
+.description__rating {
     font-size: 1.1rem;
     font-weight: 500;
     color: #f5c518;
@@ -52,7 +52,7 @@
     color: #e0e0e0;
 }
 
-.description__button {
+.description__link {
     margin-top: auto;
     align-self: flex-start;
     padding: 10px 18px;
@@ -65,7 +65,7 @@
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.description__button:hover {
+.description__link:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -81,7 +81,7 @@
         width: 60%;
     }
 
-    .description__button {
+    .description__link {
         align-self: center;
     }
 }
