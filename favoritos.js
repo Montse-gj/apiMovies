@@ -1,17 +1,22 @@
-import { getData } from "./api.js";
+let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
+export function selectionFavorites(getBusqueda, section) {
+    section.addEventListener("click", (event) => {
+        if (!event.target.matches(".favorites-button")) return;
+        const article = event.target.closest("article");
+        if (!article) return;
+        const articles = Array.from(section.querySelectorAll("article"));
+        const arrayPositions = articles.indexOf(article);
+        const peliculaSelec = getBusqueda()[arrayPositions];
 
-let batman = await getData("batman");
+        const yaExiste = favoritos.some(peli => peli.imdbID === peliculaSelec.imdbID);
+        if (yaExiste) {
+            console.log("Ya está en favoritos");
+            return;
+        }
 
-pintarArticles(batman);
-
-const section = document.getElementById("movies-section");
-const input = document.getElementById("search-input");
-const button = document.getElementById("search-button");
-button.addEventListener("click", async (event) => {
-    event.preventDefault()
-    let textoBusqueda = input.value
-    let busqueda = await getData(textoBusqueda)
-    section.innerHTML = ""
-    pintarArticles(busqueda)
-})
+        favoritos.push(peliculaSelec);
+        localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        console.log(favoritos);
+    });
+}
