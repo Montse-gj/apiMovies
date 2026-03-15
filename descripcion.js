@@ -1,97 +1,70 @@
-
 function pintarDescripcion(pelicula) {
+    if (!pelicula) return;
 
-    const { // https://www.omdbapi.com/?t=batman&apikey=36942232
+    const {
         Title: title,
         Year: year,
-        Rated: rated,
-        Released: released,
+        // Rated: rated,
+        // Released: released,
         Runtime: runtime,
         Genre: genre,
         Director: director,
-        Writer: writer,
+        // Writer: writer,
         Actors: actors,
         Plot: plot,
-        Language: language,
-        Country: country,
-        Awards: awards,
+        // Language: language,
+        // Country: country,
+        // Awards: awards,
         Poster: poster,
         // Ratings: ratings,
-        Metascore: metascore,
+        // Metascore: metascore,
         imdbRating: imdbRating,
-        imdbVotes: imdbVotes,
-        imdbID: imdbID, // https://www.imdb.com/es-es/title/tt22202452/
-        Type: type,
-        DVD: dvd,
-        BoxOffice: boxOffice,
-        Production: production,
-        Website: website,
+        // imdbVotes: imdbVotes,
+        imdbID: imdbID,
+        vType: type,
+        // DVD: dvd,
+        // BoxOffice: boxOffice,
+        // Production: production,
+        // Website: website,
         // Response: response
     } = pelicula;
 
-    `
-    <div class="description__wrapper">
-        <img class="description__img" id="description-img" src="${img}" alt="Detalle de la carta" />
-        <div class="description__info">
-            <h2 class="description__title" id="description-title">${name}</h2>
-            <p class="description__price">${price}</p>
-            <div class="description__desc-box">
-                <p class="description__desc" id="description-desc">${desc}</p>
-            </div>
-            <button class="description__button" id="${id}">Añadir al carrito</button>
-        </div>
-    </div>
-    `;
+    const section = document.getElementById('movies-section');
+    if (!section) return;
 
-    `
-    <div class="description__wrapper">
-        <img 
-            class="description__img" 
-            id="description-img" 
-            src="${poster}" 
-            alt="Poster de ${title}" 
-        />
+    const descripcionElement = document.createElement('div');
+    descripcionElement.classList.add('description__wrapper');
+
+    descripcionElement.innerHTML = `
+        <img class="description__img" src="${poster}" alt="Poster de ${title}" />
 
         <div class="description__info">
-            <h2 class="description__title" id="description-title">
-                ${title} (${year})
-            </h2>
-
-            <p class="description__price">
-                IMDb: ${imdbRating}
-            </p>
-
-            <p class="description__meta">
-                ${genre} · ${runtime}
-            </p>
-
-            <p class="description__meta">
-                Director: ${director}
-            </p>
-
-            <p class="description__meta">
-                Reparto: ${actors}
-            </p>
+            <h2 class="description__title">${title} (${year})</h2>
+            <p class="description__rating">⭐ IMDb: ${imdbRating}</p>
+            <p class="description__meta">${genre} · ${runtime}</p>
+            <p class="description__meta"><strong>Director:</strong> ${director}</p>
+            <p class="description__meta"><strong>Reparto:</strong> ${actors}</p>
 
             <div class="description__desc-box">
-                <p class="description__desc" id="description-desc">
-                    ${plot}
-                </p>
+                <p class="description__desc">${plot}</p>
             </div>
 
-            <button 
-                class="description__button" 
-                id="${imdbID}"
+            <a 
+                href="https://www.imdb.com/title/${imdbID}/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="description__link"
             >
-                Añadir a favoritos
-            </button>
+                Ver en IMDb
+            </a>
         </div>
-    </div>
     `;
 
-};
+    section.appendChild(descripcionElement);
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const descripcionPelicula = localeStorage.getItem('descripcion');
+    let descripcionPelicula = localStorage.getItem('descripcion');
+    descripcionPelicula = JSON.parse(descripcionPelicula);
     pintarDescripcion(descripcionPelicula);
 });
