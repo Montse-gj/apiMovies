@@ -17,7 +17,7 @@ export async function getData(parametro) {
 
         const data = await response.json()
         const arraySearch = data.Search;
-
+console.log(arraySearch)
         return arraySearch
     }
     catch (error) {
