@@ -18,9 +18,9 @@ function renderizarFavoritos() {
         article.classList.add("movie-card"); 
         
         article.innerHTML = `
-            <img src="${pelicula.poster}" alt="${pelicula.titulo}">
+            <img src="${pelicula.Poster}" alt="${pelicula.Title}">
             <div class="movie-info">
-                <h3>${pelicula.titulo}</h3>
+                <h3>${pelicula.Title}</h3>
                 <div class="contenedor-botones">
                     <button class="btn-borrar" data-index="${index}">Eliminar</button>
                 </div>

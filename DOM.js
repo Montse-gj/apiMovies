@@ -13,7 +13,7 @@ export function pintarArticles(arrayPeliculas) {
             <div class="movie-info">
             <h3>${pelicula.Title}</h3>
                 <div class="contenedor-botones">
-                    <a href="#" class="btn-desc" data-id="${pelicula.imdbID}">Descripción ${pelicula.imdbID}</a>
+                    <a href="#" class="btn-desc" data-id="${pelicula.imdbID}">Descripción</a>
                     <a href="#" class="favorites-button btn-ver" > Favoritos</a>
                 </div>
             </div>
