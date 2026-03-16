@@ -6,7 +6,15 @@ const section = document.getElementById("movies-section");
 const input = document.getElementById("search-input");
 const button = document.getElementById("search-button");
 
-let busqueda = await getData("batman");
+
+let resultadoBusqueda = localStorage.getItem('busqueda');
+if (!resultadoBusqueda) {
+    resultadoBusqueda = "batman";
+}
+let busqueda = await getData(resultadoBusqueda);
+
+
+
 pintarArticles(busqueda);
 
 button.addEventListener("click", async (event) => {
@@ -15,6 +23,9 @@ button.addEventListener("click", async (event) => {
     busqueda = await getData(textoBusqueda)
     section.innerHTML = ""
     pintarArticles(busqueda)
+
+    localStorage.setItem('busqueda', JSON.stringify(textoBusqueda));
+
 
 })
 
