@@ -66,27 +66,31 @@ nav a:hover {
     border-radius: 4px;
     font-weight: bold;
 }
+
 /* Estilo tarjeta muvies*/
 /* Estilo tarjeta movies */
 #movies-section {
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas en el contenedor principal */
+    justify-content: center;
+    /* Centra las tarjetas en el contenedor principal */
 }
 
 #movies-section article {
     width: 300px;
     display: flex;
-    flex-direction: column; /* Alinea los elementos internamente en vertical */
-    background-color: #1a1a1a; /* Opcional: fondo para las tarjetas */
-    border-radius: 1rem;
-    padding-bottom: 15px;
+    flex-direction: column;
+    /* Alinea los elementos internamente en vertical */
+    /* background-color: #1a1a1a;  Opcional: fondo para las tarjetas */
+    /* border-radius: 1rem; */
+    /* padding-bottom: 15px; */
 }
 
 #movies-section article img {
-    border-radius: 1.5rem; /* Ajustado para que el borde se vea bien con el padding */
-    width: 100%;
+    border-radius: 1.5rem;
+    /* Ajustado para que el borde se vea bien con el padding */
+    width: 94%;
     height: 320px;
     object-fit: cover;
     padding: 10px;
@@ -96,12 +100,15 @@ nav a:hover {
     margin: 10px 15px;
     font-size: 18px;
     text-align: center;
-    
+
     /* CLAVE PARA LA UNIFORMIDAD: */
     display: flex;
-    align-items: center;    /* Centra el texto verticalmente */
-    justify-content: center; /* Centra el texto horizontalmente */
-    min-height: 3.5rem;     /* Reserva espacio para 2 líneas de texto */
+    align-items: center;
+    /* Centra el texto verticalmente */
+    justify-content: center;
+    /* Centra el texto horizontalmente */
+    min-height: 3.5rem;
+    /* Reserva espacio para 2 líneas de texto */
     line-height: 1.2;
 }
 
@@ -110,7 +117,8 @@ nav a:hover {
     display: flex;
     gap: 10px;
     padding: 0 15px;
-    margin-top: auto; /* Empuja los botones al final de la tarjeta si decides dar una altura fija al article */
+    margin-top: auto;
+    /* Empuja los botones al final de la tarjeta si decides dar una altura fija al article */
 }
 
 /* Estilo de enlaces como botones */
@@ -121,7 +129,7 @@ nav a:hover {
     padding: 8px 12px;
     border-radius: 4px;
     font-size: 14px;
-    flex: 1;
+    flex: 0.4;
 }
 
 .contenedor-botones {
@@ -146,4 +154,4 @@ footer {
     padding: 30px;
     margin-top: 50px;
     color: #666;
-}
+}                              
