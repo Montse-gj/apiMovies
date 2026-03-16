@@ -91,7 +91,7 @@ function pintarDescripcion(pelicula) {
 };
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    let descripcionPelicula = localStorage.getItem('descripcion');
+    let descripcionPelicula = localStorage.getItem('peliArray');
     descripcionPelicula = JSON.parse(descripcionPelicula);
     pintarDescripcion(descripcionPelicula);
 });
