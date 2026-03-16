@@ -1,3 +1,5 @@
+import {anadirListenersDescripcion, anadirListenerfavoritos} from "./index.js";
+
 export function pintarArticles(arrayPeliculas) {
     
     const section = document.getElementById("movies-section");
@@ -11,12 +13,16 @@ export function pintarArticles(arrayPeliculas) {
             <div class="movie-info">
             <h3>${pelicula.Title}</h3>
                 <div class="contenedor-botones">
-                    <a href="#" class="btn-ver">Ver</a>
-                    <button class = "favorites-button" type="button"> Favoritos</button>
+                    <a href="#" class="btn-desc" data-id="${pelicula.imdbID}">Descripción ${pelicula.imdbID}</a>
+                    <a href="#" class="favorites-button" > Favoritos</a>
                 </div>
             </div>
         </div>`
 
-        section.appendChild(article)
+        section.appendChild(article);
+
+        anadirListenersDescripcion(article, pelicula);
+        anadirListenerfavoritos(article,pelicula);
     }
 }
+
