@@ -1,0 +1,1 @@
+export const API_KEY = "" // PON AQUÍ TU API KEY DE THEMOVIEDB.ORG
