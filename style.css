@@ -1,0 +1,156 @@
+header {
+    background-color: #e50914;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+nav {
+    padding: 15px;
+    text-align: center;
+    background-color: #000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+
+    /* imagen de fundo */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('/imag/sala\ cine.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Buscador */
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-box button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+/* Estilo tarjeta muvies*/
+/* Estilo tarjeta movies */
+#movies-section {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas en el contenedor principal */
+}
+ 
+
+#movies-section article {
+    width: 300px;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos internamente en vertical */
+    background-color: #1a1a1a; /* Opcional: fondo para las tarjetas */
+    border-radius: 1rem;
+    padding-bottom: 15px;
+}
+
+#movies-section article img {
+    border-radius: 1.5rem; /* Ajustado para que el borde se vea bien con el padding */
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+#movies-section article h3 {
+    margin: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    
+    /* CLAVE PARA LA UNIFORMIDAD: */
+    display: flex;
+    align-items: center;    /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    min-height: 3.5rem;     /* Reserva espacio para 2 líneas de texto */
+    line-height: 1.2;
+}
+
+/* Contenedor para los botones (asumiendo que los tienes en un div) */
+.botones-container {
+    display: flex;
+    gap: 10px;
+    padding: 0 15px;
+    margin-top: auto; /* Empuja los botones al final de la tarjeta si decides dar una altura fija al article */
+}
+
+/* Estilo de enlaces como botones */
+.btn-ver,
+.btn-desc {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.contenedor-botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+.btn-ver {
+    background-color: #e50914;
+}
+
+.btn-desc {
+    background-color: #444;
+}
+
+/*Pie de página*/
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    color: #666;
+}
+.btn-fav-selec{
+    background-color: blue;
+}
+.nav-pag-ant{
+    visibility: hidden;
+}
