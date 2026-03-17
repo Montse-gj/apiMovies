@@ -23,3 +23,16 @@ export async function getDiscoverData(page = 1) {
         throw new ErrorFetch()
     };
 };
+
+export async function getMovieData(query, page) {
+    try {
+        const url = `${API_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`;
+        const response = await fetch(url, OPTIONS);
+        if (!response.ok) throw new ErrorRespuesta(response.status);
+        const data = await response.json();
+        return data.results;
+    }
+    catch (error) {
+        throw new ErrorFetch()
+    };
+};
