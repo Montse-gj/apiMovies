@@ -9,3 +9,17 @@ const OPTIONS = {
         Authorization: `Bearer ${API_KEY}`
     }
 };
+
+export async function getDiscoverData(page = 1) {
+    try {
+        const url = `${API_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}}&sort_by=popularity.desc`;
+        const response = await fetch(url, OPTIONS);
+        if (!response.ok) throw new ErrorRespuesta(response.status);
+        const data = await response.json();
+        return data.results;
+    }
+    catch (error) {
+        console.log(error);
+        throw new ErrorFetch()
+    };
+};
