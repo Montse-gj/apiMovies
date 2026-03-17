@@ -24,7 +24,7 @@ export async function getDiscoverData(page = 1) {
     };
 };
 
-export async function getMovieData(query, page) {
+export async function getMovieData(query, page = 1) {
     try {
         const url = `${API_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`;
         const response = await fetch(url, OPTIONS);
