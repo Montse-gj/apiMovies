@@ -10,6 +10,7 @@ const OPTIONS = {
     }
 };
 
+// https://developer.themoviedb.org/reference/discover-movie
 export async function getDiscoverData(page = 1) {
     try {
         const url = `${API_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}}&sort_by=popularity.desc`;
@@ -24,6 +25,7 @@ export async function getDiscoverData(page = 1) {
     };
 };
 
+// https://developer.themoviedb.org/reference/search-movie
 export async function getMovieData(query, page = 1) {
     try {
         const url = `${API_URL}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`;
