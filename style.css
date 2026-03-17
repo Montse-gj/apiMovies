@@ -148,3 +148,9 @@ footer {
     margin-top: 50px;
     color: #666;
 }
+.btn-fav-selec{
+    background-color: blue;
+}
+.nav-pag-ant{
+    visibility: hidden;
+}
