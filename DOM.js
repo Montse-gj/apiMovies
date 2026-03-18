@@ -16,7 +16,7 @@ export function pintarArticles(arrayPeliculas) {
         }
         const article = document.createElement("article")
 
-        let esFav = yaExiste ? `<a href="#" class="favorites-button btn-ver btn-fav-selec" > Es favoritos</a>;`
+        let esFav = yaExiste ? `<a href="#" class="favorites-button btn-ver btn-fav-selec" > Es favoritos</a>`
             : `<a href="#" class="favorites-button btn-ver" > Favoritos</a>`;
 
         article.innerHTML = `<div class="movie-card" data-name="NA">
