@@ -3,9 +3,9 @@ import { ErrorFetch, ErrorRespuesta } from "./error.js";
 const API_KEY = "apikey=36942232";
 const API_URL = "http://www.omdbapi.com/";
 
-export async function getData(parametro, tipoBusqueda = "s", page = 1) {
+export async function getData(parametro, page = 1) {
     try {
-        const url = `${API_URL}?${API_KEY}&${tipoBusqueda}=${parametro}&page=${page}`;
+        const url = `${API_URL}?${API_KEY}&s=${parametro}&page=${page}`;
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -24,11 +24,9 @@ export async function getData(parametro, tipoBusqueda = "s", page = 1) {
     }
 }
 
-
-
-export async function getDataDescripcion(parametro, tipoBusqueda = "t") {
+export async function getDataDescripcion(parametro) {
     try {
-        const url = `${API_URL}?${API_KEY}&${tipoBusqueda}=${parametro}`;
+        const url = `${API_URL}?${API_KEY}&i=${parametro}`;
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -36,7 +34,7 @@ export async function getDataDescripcion(parametro, tipoBusqueda = "t") {
             throw new ErrorRespuesta(response.status)
         }
 
-        const data = await response.json()
+        let data = await response.json()
         return data;
     }
     catch (error) {

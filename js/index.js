@@ -5,14 +5,14 @@ import { pintarArticles } from "./DOM.js";
 const section = document.getElementById("movies-section");
 const input = document.getElementById("search-input");
 const button = document.getElementById("search-button");
-const navPagSig = document.getElementById(`nav-pag-sig`);
-const navPagRev = document.getElementById(`nav-pag-ant`);
+const navPagSig = document.getElementById('nav-pag-sig');
+const navPagRev = document.getElementById('nav-pag-ant');
 
 let contadorPag = 1;
 
 let resultadoBusqueda = sessionStorage.getItem('busqueda');
 if (!resultadoBusqueda) {
-    resultadoBusqueda = "batman";
+    resultadoBusqueda = "batman";navPagSig
 }
 
 let busqueda = await getData(resultadoBusqueda);
