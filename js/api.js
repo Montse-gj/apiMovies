@@ -1,7 +1,7 @@
 import { ErrorFetch, ErrorRespuesta } from "./error.js";
 
 const API_KEY = "apikey=36942232";
-const API_URL = "http://www.omdbapi.com/";
+const API_URL = "https://www.omdbapi.com/";
 
 export async function getData(parametro, page = 1) {
     try {
