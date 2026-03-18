@@ -1,11 +1,19 @@
+import { getDataDescripcion } from "./api.js";
+
 document.addEventListener('DOMContentLoaded', (event) => {
     let descripcionPelicula = localStorage.getItem('peliArray');
+
     descripcionPelicula = JSON.parse(descripcionPelicula);
     pintarDescripcion(descripcionPelicula);
 });
 
-function pintarDescripcion(pelicula) {
+async function pintarDescripcion(pelicula) {
     if (!pelicula) return;
+
+    console.log(pelicula)
+    let peliculadetalle = await getDataDescripcion(pelicula.imdbID, "i")
+    console.log(peliculadetalle.imdbID)
+
 
     const {
         Title: title,
@@ -33,7 +41,7 @@ function pintarDescripcion(pelicula) {
         // Production: production,
         // Website: website,
         // Response: response
-    } = pelicula;
+    } = peliculadetalle;
 
     const section = document.getElementById('movies-section');
     if (!section) return;
