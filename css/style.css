@@ -37,7 +37,7 @@ nav a:hover {
 
     /* imagen de fundo sala de cine */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('/imag/sala\ cine.jpg');
+        url('/img/sala\ cine.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -199,7 +199,8 @@ footer {
     font-weight: bold;
     transition: transform 0.2s ease;
 }
-.section-volver{
+
+.section-volver {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -208,6 +209,7 @@ footer {
     text-align: center;
     display: block;
 }
+
 .section-paginacion a:hover {
     transform: scale(1.1);
 }
