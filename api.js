@@ -3,10 +3,10 @@ import { ErrorFetch, ErrorRespuesta } from "./error.js";
 const API_KEY = "apikey=36942232";
 const API_URL = "http://www.omdbapi.com/";
 
-export async function getData(parametro) {
+export async function getData(parametro, page=1) {
     try {
 
-        const url = `${API_URL}?${API_KEY}&s=${parametro}`;
+        const url = `${API_URL}?${API_KEY}&s=${parametro}&page=${page}`;
         const response = await fetch(url)
 
         if (!response.ok) {
@@ -17,11 +17,13 @@ export async function getData(parametro) {
 
         const data = await response.json()
         const arraySearch = data.Search;
-console.log(arraySearch)
-        return arraySearch
+        const newArray = [...new Map(arraySearch.map(item => [item.imdbID, item])).values()];
+        return newArray;
     }
     catch (error) {
         throw new ErrorFetch()
     }
 }
+
+
 
