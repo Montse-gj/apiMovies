@@ -1,6 +1,5 @@
 import { getData } from "./api.js";
 import { pintarArticles } from "./DOM.js";
-import { ErrorRespuesta } from "./error.js";
 
 
 const section = document.getElementById("movies-section");
@@ -92,7 +91,7 @@ export function anadirListenersDescripcion(article, pelicula) {
 export function anadirListenerfavoritos(article, pelicula) {
 
 
-    
+
 
     let boton = article.querySelector(".favorites-button");
     boton.addEventListener("click", (event) => {
