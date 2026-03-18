@@ -74,7 +74,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
- 
+
 
 #movies-section article {
     width: 300px;
@@ -83,7 +83,7 @@ nav a:hover {
 }
 
 #movies-section article img {
-    border-radius:0.9rem;
+    border-radius: 0.9rem;
     /* width: 94%;
     height: 320px; */
     object-fit: cover;
@@ -111,6 +111,7 @@ nav a:hover {
     font-size: 14px;
     flex: 0.4;
     cursor: pointer;
+    text-align: center;
 }
 
 .contenedor-botones {
@@ -122,7 +123,7 @@ nav a:hover {
 
 .btn-ver {
     background-color: #e50914;
-    
+
 }
 
 .btn-desc {
@@ -130,25 +131,25 @@ nav a:hover {
 }
 
 /* button favorito */
-article.movie-card
-{
-  display: inline-block;
-  padding: 10px 20px;
-  text-align: center;  
- 
-button.btn-borrar {
-    
-    color: white;
-    padding: 8px 12px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    flex: 0.4;
-    cursor: pointer;
-    justify-content: center;
-    background-color: #e50914;
-   
+article.movie-card {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+
+    button.btn-borrar {
+
+        color: white;
+        padding: 8px 12px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        flex: 0.4;
+        cursor: pointer;
+        justify-content: center;
+        background-color: #e50914;
+
+    }
+
 }
-   
-}
+
 /*Pie de página*/
 footer {
     background-color: #000;
@@ -156,27 +157,49 @@ footer {
     padding: 30px;
     margin-top: 50px;
     color: #666;
-}                              
+}
 
 .description__link {
-  margin-top: auto;
-  align-self: flex-start;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
-  background: #f30505;
-  color: #fcf7f7;
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #f30505;
+    color: #fcf7f7;
 }
 
 .description__rating {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 
-.btn-fav-selec{
+.btn-fav-selec {
     background-color: blue;
 }
-.nav-pag-ant{
+
+.nav-pag-ant {
     visibility: hidden;
+}
+
+.section-paginacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2em;
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+.section-paginacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.section-paginacion a:hover {
+    transform: scale(1.1);
 }
