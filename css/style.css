@@ -145,6 +145,9 @@ article.movie-card {
         cursor: pointer;
         justify-content: center;
         background-color: #e50914;
+        border-block: none;
+        border-left: none;
+        border-right: none;
 
     }
 

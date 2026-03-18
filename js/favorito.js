@@ -1,9 +1,9 @@
 const contenedor = document.getElementById('contenedor-favoritos');
 
+document.addEventListener('DOMContentLoaded', renderizarFavoritos);
+
 function renderizarFavoritos() {
     if (!contenedor) return; 
-    
-               // peticione de datos de localStorage
 
     const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
     contenedor.innerHTML = '';
@@ -12,7 +12,6 @@ function renderizarFavoritos() {
         return;
     }
 
-                  //Datos de html
     favoritos.forEach((pelicula, index) => {
         const article = document.createElement("article");
         article.classList.add("movie-card"); 
@@ -29,7 +28,6 @@ function renderizarFavoritos() {
         contenedor.appendChild(article);
     });
 
-                 //Asignar eventos 
     const botonesBorrar = contenedor.querySelectorAll('.btn-borrar'); 
     botonesBorrar.forEach(btn => {
         btn.onclick = (e) => {
@@ -45,5 +43,3 @@ function eliminarFavorito(indice) {
     localStorage.setItem('favoritos', JSON.stringify(favoritos));
     renderizarFavoritos();
 }
-
-document.addEventListener('DOMContentLoaded', renderizarFavoritos);

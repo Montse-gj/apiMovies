@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    let descripcionPelicula = localStorage.getItem('peliArray');
+    descripcionPelicula = JSON.parse(descripcionPelicula);
+    pintarDescripcion(descripcionPelicula);
+});
+
 function pintarDescripcion(pelicula) {
     if (!pelicula) return;
 
@@ -89,9 +95,3 @@ function pintarDescripcion(pelicula) {
     wrapper.append(img, infoDiv);
     section.appendChild(wrapper);
 };
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    let descripcionPelicula = localStorage.getItem('peliArray');
-    descripcionPelicula = JSON.parse(descripcionPelicula);
-    pintarDescripcion(descripcionPelicula);
-});

@@ -10,8 +10,7 @@ export async function getData(parametro, page=1) {
         const response = await fetch(url)
 
         if (!response.ok) {
-            // console.log("ha habido un error", response.status);
-            // return [];
+           
             throw new ErrorRespuesta(response.status)
         }
 
