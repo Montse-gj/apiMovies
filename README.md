@@ -67,6 +67,29 @@ El desarrollo del prototipo se ha planteado siguiendo los siguientes requerimien
 - Guardar preferencias (favoritos) en `localStorage`.
 - Visualización de datos en un listado (resultado de búsqueda o favoritos).
 
+## Árbol de archivos
+```text
+.
+├── css/                          # Hojas de estilo CSS
+│   ├── descripcion.css
+│   └── style.css
+├── js/                           # Lógica en JavaScript
+│   ├── api.js
+│   ├── descripcion.js
+│   ├── DOM.js
+│   ├── error.js
+│   ├── favorito.js
+│   ├── index.js
+│   └── samples.js
+├── img/                          # Imágenes
+│   └── sala cine.jpg
+├── .gitignore                    # Archivo .gitignore
+├── descripcion.html              # Página de descripción
+├── favorito.html                 # Paágina de listado de favoritos
+├── index.html                    # Página principal
+└── README.md                     # Documentación del proyecto
+```
+
 ## Autores
 
 - [Montse](https://github.com/Montse-gj)
