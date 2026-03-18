@@ -6,9 +6,9 @@
     "changelog_version": "1.0.0"
   },
   "stats": {
-    "total_commits": 6,
-    "total_branches": 3,
-    "last_updated": "2026-03-17T18:15:53+01:00"
+    "total_commits": 7,
+    "total_branches": 4,
+    "last_updated": "2026-03-18T11:08:33+01:00"
   },
   "branches": [
     {
@@ -25,6 +25,14 @@
       "commit_count": 2,
       "last_commit_hash": "bf9cadb",
       "last_commit_date": "2026-03-17T18:15:53+01:00",
+      "last_author": "Montse Garcia"
+    },
+    {
+      "name": "feature/btnVolver",
+      "file": "feature-btnVolver.json",
+      "commit_count": 1,
+      "last_commit_hash": "c36c43a",
+      "last_commit_date": "2026-03-18T11:08:33+01:00",
       "last_author": "Montse Garcia"
     },
     {

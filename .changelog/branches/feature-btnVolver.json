@@ -1,0 +1,35 @@
+{
+  "branch": "feature/btnVolver",
+  "created_at": "2026-03-18T11:08:33+01:00",
+  "last_updated": "2026-03-18T11:08:33+01:00",
+  "commits": [
+    {
+      "hash": "c36c43a",
+      "hash_full": "c36c43aeb0cd45ca9fcfeb22aefc071cc30c3178",
+      "message": "estilos boton volver",
+      "type": "other",
+      "scope": "",
+      "subject": "estilos boton volver",
+      "description": "estilos boton volver",
+      "notes": "no",
+      "author": {
+        "name": "Montse Garcia",
+        "email": "montsegarciaj@hotmail.com"
+      },
+      "branch": "feature/btnVolver",
+      "date": "2026-03-18T11:08:33+01:00",
+      "timestamp": 1773828513,
+      "stats": {
+        "files_changed": 1,
+        "lines_added": 9,
+        "lines_deleted": 1
+      },
+      "files": [
+        {
+          "file": "style.css",
+          "status": "modified"
+        }
+      ]
+    }
+  ]
+}

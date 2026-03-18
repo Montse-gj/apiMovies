@@ -199,7 +199,15 @@ footer {
     font-weight: bold;
     transition: transform 0.2s ease;
 }
-
+.section-volver{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    text-align: center;
+    display: block;
+}
 .section-paginacion a:hover {
     transform: scale(1.1);
 }
