@@ -1,4 +1,5 @@
 import { getDataDescripcion } from "./api.js";
+import {addirListenerImagen} from "./DOM.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     let descripcionPelicula = localStorage.getItem('peliArray');
@@ -10,9 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 async function pintarDescripcion(pelicula) {
     if (!pelicula) return;
 
-    console.log(pelicula)
-    let peliculadetalle = await getDataDescripcion(pelicula.imdbID, "i")
-    console.log(peliculadetalle.imdbID)
+    let peliculadetalle = await getDataDescripcion(pelicula.imdbID);
 
 
     const {
@@ -102,4 +101,6 @@ async function pintarDescripcion(pelicula) {
     infoDiv.append(h2, pRating, pMeta, pDirector, pActors, descBox, link);
     wrapper.append(img, infoDiv);
     section.appendChild(wrapper);
+    addirListenerImagen(section);
+
 };

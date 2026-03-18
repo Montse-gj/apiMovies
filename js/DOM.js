@@ -1,4 +1,4 @@
-import { anadirListenersDescripcion, anadirListenerfavoritos } from "./index.js";
+import { anadirListenersDescripcion, anadirListenerfavoritos } from "./listeners.js";
 
 export function pintarArticles(arrayPeliculas) {
 
@@ -12,8 +12,9 @@ export function pintarArticles(arrayPeliculas) {
         const yaExiste = favoritos.some(peli => peli.imdbID === pelicula.imdbID);
 
         if (pelicula.Poster === "N/A") {
-            pelicula.Poster = "https://placehold.co/600x400?text=Portada+no+encontrada"
+            pelicula.Poster = "https://placehold.co/300x445?text=Portada+no+encontrada"
         }
+
         const article = document.createElement("article")
 
         let esFav = yaExiste ? `<a href="#" class="favorites-button btn-ver btn-fav-selec" > Es favorito</a>`
@@ -28,10 +29,19 @@ export function pintarArticles(arrayPeliculas) {
             </div>
         </div>`
 
+        addirListenerImagen(article);
         section.appendChild(article);
 
         anadirListenersDescripcion(article, pelicula);
         anadirListenerfavoritos(article, pelicula);
     }
 }
+
+export function addirListenerImagen(article) {
+    const imagen = article.querySelector("img")
+    imagen.addEventListener("error", ()=>{
+        imagen.src = "https://placehold.co/300x445?text=Portada+no+encontrada"
+    } )
+};
+
 
