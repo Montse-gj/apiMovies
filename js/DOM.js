@@ -1,4 +1,4 @@
-import { anadirListenersDescripcion, anadirListenerfavoritos } from "./index.js";
+import { anadirListenersDescripcion, anadirListenerfavoritos } from "./listeners.js";
 
 export function pintarArticles(arrayPeliculas) {
 

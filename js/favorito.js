@@ -1,3 +1,5 @@
+import { addirListenerImagen } from "./DOM.js";
+
 const contenedor = document.getElementById('contenedor-favoritos');
 
 document.addEventListener('DOMContentLoaded', renderizarFavoritos);
@@ -26,6 +28,7 @@ function renderizarFavoritos() {
             </div>
         `;
         contenedor.appendChild(article);
+        addirListenerImagen(article)
     });
 
     const botonesBorrar = contenedor.querySelectorAll('.btn-borrar'); 
