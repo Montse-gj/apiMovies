@@ -92,6 +92,7 @@ export function anadirListenersDescripcion(article, pelicula) {
 export function anadirListenerfavoritos(article, pelicula) {
 
 
+    
 
     let boton = article.querySelector(".favorites-button");
     boton.addEventListener("click", (event) => {
