@@ -7,7 +7,7 @@
 ## Funcionalidades Core (MVP) 
 
 - Página principal de peliculas
-- Página de descripción de una película en concreto
+- Página de descripción de una película sen concreto
 - Herramienta de búsqueda de peliculas según el título
 - Listado de películas favoritas
 
