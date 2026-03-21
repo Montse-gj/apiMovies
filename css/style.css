@@ -37,7 +37,7 @@ nav a:hover {
 
     /* imagen de fundo sala de cine */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../img/sala_cine.jpg');
+        url('https://montse-gj.github.io/apiMovies/img/sala_cine.jpg');
     background-size: cover;
     background-position: center;
 }
