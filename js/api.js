@@ -1,0 +1,44 @@
+import { ErrorFetch, ErrorRespuesta } from "./error.js";
+
+const API_KEY = "apikey=36942232";
+const API_URL = "https://www.omdbapi.com/";
+
+export async function getData(parametro, page = 1) {
+    try {
+        const url = `${API_URL}?${API_KEY}&s=${parametro}&page=${page}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+
+            throw new ErrorRespuesta(response.status)
+        }
+
+        const data = await response.json()
+        const arraySearch = data.Search;
+        const newArray = [...new Map(arraySearch.map(item => [item.imdbID, item])).values()];
+        return newArray;
+    }
+    catch (error) {
+        // console.error(error)
+        throw new ErrorFetch()
+    }
+}
+
+export async function getDataDescripcion(parametro) {
+    try {
+        const url = `${API_URL}?${API_KEY}&i=${parametro}`;
+        const response = await fetch(url);
+
+        if (!response.ok) {
+
+            throw new ErrorRespuesta(response.status)
+        }
+
+        let data = await response.json()
+        return data;
+    }
+    catch (error) {
+        // console.error(error)
+        throw new ErrorFetch()
+    }
+}
